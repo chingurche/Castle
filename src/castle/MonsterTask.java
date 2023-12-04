@@ -16,7 +16,7 @@ public class MonsterTask {
         System.out.println(question);
         System.out.print("ответ: ");
         String answer = Input.readString();
-        if (answer.toLowerCase() == this.answer.toLowerCase()) {
+        if (answer.toLowerCase().equals(this.answer.toLowerCase())) {
             return true;
         }
         return false;

@@ -29,6 +29,16 @@ public class Hierarchy {
         gameObjects.remove(gameObject);
     }
 
+    public boolean contains(GameObject obj) {
+        for (var gameObject : gameObjects) {
+            if (gameObject == obj) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public GameObject getObjectOn(Vector2 position) {
         for (var gameObject : gameObjects) {
             if (gameObject.position.x == position.x && gameObject.position.y == position.y) {

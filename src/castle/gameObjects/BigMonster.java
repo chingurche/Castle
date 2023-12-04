@@ -3,21 +3,26 @@ package castle.gameObjects;
 import castle.*;
 
 public class BigMonster extends GameObject implements Interactable {
-    public static MonsterTask[] easyTasks = new MonsterTask[] {
+    private static MonsterTask[] easyTasks = new MonsterTask[] {
             new MonsterTask("какого числа начнется MGB?", "7"),
             new MonsterTask("сколько человек могут быть в команде?", "4"),
             new MonsterTask("какой язык программирования будет изучаться в MGB?", "java"),
     };
-    public static MonsterTask[] mediumTasks = new MonsterTask[] {
+    private static MonsterTask[] mediumTasks = new MonsterTask[] {
             new MonsterTask("никнейм разработчика", "chingurche"),
             new MonsterTask("2 + 2?", "4"),
             new MonsterTask("2 + 2?", "4"),
     };
-    public static MonsterTask[] hardTasks = new MonsterTask[] {
+    private static MonsterTask[] hardTasks = new MonsterTask[] {
             new MonsterTask("название первой игры разработчика", "cave adventure"),
             new MonsterTask("квантовое?", "вмешательство"),
             new MonsterTask("2 + 2?", "4"),
     };
+
+    public BigMonster(Vector2 position) {
+        this.position = position;
+        this.renderer = new Renderer("Bm", "\u001B[31m");
+    }
 
     public void interact(Hero hero) {
         if (!askTask()) {
