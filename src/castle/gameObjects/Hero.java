@@ -16,7 +16,7 @@ public class Hero extends GameObject {
         this.renderer = new Renderer("Hr", "\u001B[32m");
     }
 
-    public void Move(Vector2 direction)
+    public void move(Vector2 direction)
     {
         Vector2 newPosition = position.add(direction);
 

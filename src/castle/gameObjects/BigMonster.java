@@ -40,6 +40,6 @@ public class BigMonster extends GameObject implements Interactable {
             case GameDifficulty.hard -> hardTasks[(int) (Math.random() * hardTasks.length)];
         };
 
-        return task.Ask();
+        return task.ask();
     }
 }

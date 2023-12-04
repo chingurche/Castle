@@ -9,7 +9,7 @@ public class MonsterTask {
         this.answer = answer;
     }
 
-    public boolean Ask() {
+    public boolean ask() {
         System.out.println(question);
         System.out.print("ответ: ");
         String answer = Input.readString();

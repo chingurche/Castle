@@ -57,7 +57,7 @@ public class GameCycle {
                 return;
             }
 
-            hero.Move(Input.readDirection());
+            hero.move(Input.readDirection());
         }
     }
 }

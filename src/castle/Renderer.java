@@ -9,7 +9,7 @@ public class Renderer {
         this.color = color;
     }
 
-    public void Render() {
+    public void render() {
         System.out.print(color + texture + "\u001B[0m");
     }
 }

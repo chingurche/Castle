@@ -17,7 +17,7 @@ public class RenderPipeline {
 
                 var obj = hierarchy.getObjectOn(new Vector2(j, i));
                 if (obj != null) {
-                    obj.renderer.Render();
+                    obj.renderer.render();
                     System.out.print(" ");
                 }
                 else {
