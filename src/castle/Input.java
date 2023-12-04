@@ -1,7 +1,5 @@
 package castle;
 
-import castle.Vector2;
-
 import java.util.Scanner;
 
 public class Input {
@@ -9,31 +7,24 @@ public class Input {
         var in = new Scanner(System.in);
         return in.nextLine();
     }
+
     public static GameDifficulty readDifficulty() {
         var in = new Scanner(System.in);
-        switch (in.next()) {
-            default:
-                return GameDifficulty.easy;
-            case "2":
-                return GameDifficulty.medium;
-            case "3":
-                return GameDifficulty.hard;
-        }
+        return switch (in.next()) {
+            default -> GameDifficulty.easy;
+            case "2" -> GameDifficulty.medium;
+            case "3" -> GameDifficulty.hard;
+        };
     }
 
     public static Vector2 readDirection() {
         var in = new Scanner(System.in);
-        switch (in.next()) {
-            case "w", "W":
-                return Vector2.down();
-            case "a", "A":
-                return Vector2.left();
-            case "s", "S":
-                return Vector2.up();
-            case "d", "D":
-                return Vector2.right();
-            default:
-                return Vector2.zero();
-        }
+        return switch (in.next()) {
+            case "w", "W" -> Vector2.down();
+            case "a", "A" -> Vector2.left();
+            case "s", "S" -> Vector2.up();
+            case "d", "D" -> Vector2.right();
+            default -> Vector2.zero();
+        };
     }
 }

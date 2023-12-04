@@ -1,12 +1,9 @@
 package castle;
 
-import java.util.Locale;
-
 public class MonsterTask {
-    private String question;
-    private String answer;
+    private final String question;
+    private final String answer;
 
-    public MonsterTask() { }
     public MonsterTask(String question, String answer) {
         this.question = question;
         this.answer = answer;
@@ -16,9 +13,6 @@ public class MonsterTask {
         System.out.println(question);
         System.out.print("ответ: ");
         String answer = Input.readString();
-        if (answer.toLowerCase().equals(this.answer.toLowerCase())) {
-            return true;
-        }
-        return false;
+        return answer.equalsIgnoreCase(this.answer);
     }
 }

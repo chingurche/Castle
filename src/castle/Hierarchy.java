@@ -7,7 +7,7 @@ public class Hierarchy {
 
     public final Vector2 SIZE = new Vector2(5, 5);
 
-    private ArrayList<GameObject> gameObjects = new ArrayList<>();
+    private final ArrayList<GameObject> gameObjects = new ArrayList<>();
 
     private Hierarchy() {
 

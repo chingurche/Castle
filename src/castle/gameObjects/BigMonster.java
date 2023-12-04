@@ -3,20 +3,20 @@ package castle.gameObjects;
 import castle.*;
 
 public class BigMonster extends GameObject implements Interactable {
-    private static MonsterTask[] easyTasks = new MonsterTask[] {
+    private final MonsterTask[] easyTasks = new MonsterTask[] {
             new MonsterTask("какого числа начнется MGB?", "7"),
             new MonsterTask("сколько человек могут быть в команде?", "4"),
             new MonsterTask("какой язык программирования будет изучаться в MGB?", "java"),
     };
-    private static MonsterTask[] mediumTasks = new MonsterTask[] {
-            new MonsterTask("никнейм разработчика", "chingurche"),
-            new MonsterTask("2 + 2?", "4"),
-            new MonsterTask("2 + 2?", "4"),
+    private final MonsterTask[] mediumTasks = new MonsterTask[] {
+            new MonsterTask("псевдоним разработчика", "chingurche"),
+            new MonsterTask("название команды разработчика", "omicron"),
+            new MonsterTask("имя наставника команды разработчика", "ксения"),
     };
-    private static MonsterTask[] hardTasks = new MonsterTask[] {
+    private final MonsterTask[] hardTasks = new MonsterTask[] {
             new MonsterTask("название первой игры разработчика", "cave adventure"),
-            new MonsterTask("квантовое?", "вмешательство"),
-            new MonsterTask("2 + 2?", "4"),
+            new MonsterTask("квантовое", "вмешательство"),
+            new MonsterTask("это киторок", "враг геймдева"),
     };
 
     public BigMonster(Vector2 position) {
@@ -33,16 +33,12 @@ public class BigMonster extends GameObject implements Interactable {
     }
 
     private boolean askTask() {
-        MonsterTask task = new MonsterTask();
-        GameDifficulty difficulty = GameCycle.getDifficulty();
-        switch (difficulty) {
-            case GameDifficulty.easy:
-                task = easyTasks[(int) (Math.random() * easyTasks.length)];
-            case GameDifficulty.medium:
-                task = mediumTasks[(int) (Math.random() * easyTasks.length)];
-            case GameDifficulty.hard:
-                task = hardTasks[(int) (Math.random() * easyTasks.length)];
-        }
+        MonsterTask task;
+        task = switch (GameCycle.getDifficulty()) {
+            case GameDifficulty.easy -> easyTasks[(int) (Math.random() * easyTasks.length)];
+            case GameDifficulty.medium -> mediumTasks[(int) (Math.random() * mediumTasks.length)];
+            case GameDifficulty.hard -> hardTasks[(int) (Math.random() * hardTasks.length)];
+        };
 
         return task.Ask();
     }

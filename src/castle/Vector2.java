@@ -18,18 +18,11 @@ public class Vector2 {
     public Vector2 add(Vector2 other) {
         return new Vector2(x + other.x, y + other.y);
     }
-    public Vector2 reduce(Vector2 other) {
-        return new Vector2(x - other.x, y - other.y);
-    }
+    //public Vector2 reduce(Vector2 other) { return new Vector2(x - other.x, y - other.y); }
 
     public boolean isValid() {
         var hierarchy = Hierarchy.getInstance();
-        if (x < 0 || x > hierarchy.SIZE.x - 1) {
-            return false;
-        }
-        if (y < 0 || y > hierarchy.SIZE.y - 1) {
-            return false;
-        }
-        return true;
+        return (x < 0 || x > hierarchy.SIZE.x - 1) ||
+                (y < 0 || y > hierarchy.SIZE.y - 1);
     }
 }

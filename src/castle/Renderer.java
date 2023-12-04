@@ -1,12 +1,8 @@
 package castle;
 
 public class Renderer {
-    private String texture;
-    private String color = "\u001B[0m";
-
-    public Renderer(String texture) {
-        this.texture = texture;
-    }
+    private final String texture;
+    private final String color;
 
     public Renderer(String texture, String color) {
         this.texture = texture;
