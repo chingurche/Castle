@@ -9,7 +9,7 @@ public class GameCycle {
     private static Hierarchy hierarchy;
     private static Hero hero;
 
-    public GameDifficulty getDifficulty() { return difficulty; }
+    public static GameDifficulty getDifficulty() { return difficulty; }
 
     public static void main(String[] args) {
         ChooseDifficulty();

@@ -5,7 +5,10 @@ import castle.Vector2;
 import java.util.Scanner;
 
 public class Input {
-
+    public static String readString() {
+        var in = new Scanner(System.in);
+        return in.nextLine();
+    }
     public static GameDifficulty readDifficulty() {
         var in = new Scanner(System.in);
         switch (in.next()) {

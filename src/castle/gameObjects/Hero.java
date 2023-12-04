@@ -4,7 +4,6 @@ package castle.gameObjects;
 import castle.GameObject;
 import castle.Renderer;
 import castle.Hierarchy;
-import castle.Interactable;
 import castle.Vector2;
 
 public class Hero extends GameObject {
@@ -29,14 +28,14 @@ public class Hero extends GameObject {
 
         if (other != null && Interactable.class.isAssignableFrom(other.getClass())) {
             Interactable otherInteractable = (Interactable) other;
-            otherInteractable.Interact();
+            otherInteractable.interact(this);
             hierarchy.removeObject(other);
         }
 
         position = newPosition;
     }
 
-    public void GetDamage() {
+    public void takeDamage() {
         health--;
     }
 }

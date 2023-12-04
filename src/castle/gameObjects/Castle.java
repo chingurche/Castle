@@ -8,7 +8,7 @@ public class Castle extends GameObject implements Interactable {
         this.renderer = new Renderer("Ct", "\u001B[34m");
     }
 
-    public void Interact() {
+    public void interact(Hero hero) {
         Hierarchy.getInstance().removeObject(this);
     }
 }
