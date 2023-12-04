@@ -5,6 +5,19 @@ import castle.Vector2;
 import java.util.Scanner;
 
 public class Input {
+
+    public static GameDifficulty readDifficulty() {
+        var in = new Scanner(System.in);
+        switch (in.next()) {
+            default:
+                return GameDifficulty.easy;
+            case "2":
+                return GameDifficulty.medium;
+            case "3":
+                return GameDifficulty.hard;
+        }
+    }
+
     public static Vector2 readDirection() {
         var in = new Scanner(System.in);
         switch (in.next()) {

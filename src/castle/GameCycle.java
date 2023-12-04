@@ -2,19 +2,31 @@ package castle;
 
 import castle.gameObjects.Castle;
 import castle.gameObjects.Hero;
+import java.util.Scanner;
 
 public class GameCycle {
+    private static GameDifficulty difficulty;
     private static Hierarchy hierarchy;
     private static Hero hero;
 
+    public GameDifficulty getDifficulty() { return difficulty; }
+
     public static void main(String[] args) {
-        var check = new Vector2(0, 5).isValid();
-        System.out.println(check);
-        //Initialize();
-        //CycleCircle();
+        ChooseDifficulty();
+        Initialize();
+        CycleCircle();
     }
 
-    public static void Initialize() {
+    private static void ChooseDifficulty() {
+        System.out.println("Choose difficulty:");
+        System.out.println("1. Easy");
+        System.out.println("2. Medium");
+        System.out.println("3. Hard");
+
+        difficulty = Input.readDifficulty();
+    }
+
+    private static void Initialize() {
         hierarchy = Hierarchy.getInstance();
 
         var castle = new Castle(new Vector2((int) (Math.random() * hierarchy.SIZE.x), 0));
@@ -23,7 +35,7 @@ public class GameCycle {
         hierarchy.addObject(hero);
     }
 
-    public static void CycleCircle() {
+    private static void CycleCircle() {
         while (true) {
             RenderPipeline.RenderHierarchy();
             hero.Move(Input.readDirection());

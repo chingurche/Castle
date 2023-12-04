@@ -8,6 +8,9 @@ import castle.Interactable;
 import castle.Vector2;
 
 public class Hero extends GameObject {
+    private int health = 3;
+
+    public int getHealth() { return health; }
 
     public Hero(Vector2 position){
         this.position = position;
@@ -31,5 +34,9 @@ public class Hero extends GameObject {
         }
 
         position = newPosition;
+    }
+
+    public void GetDamage() {
+        health--;
     }
 }

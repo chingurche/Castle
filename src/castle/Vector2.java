@@ -24,10 +24,10 @@ public class Vector2 {
 
     public boolean isValid() {
         var hierarchy = Hierarchy.getInstance();
-        if (x < 0 && x > hierarchy.SIZE.x - 1) {
+        if (x < 0 || x > hierarchy.SIZE.x - 1) {
             return false;
         }
-        if (y < 0 && y > hierarchy.SIZE.y - 1) {
+        if (y < 0 || y > hierarchy.SIZE.y - 1) {
             return false;
         }
         return true;
